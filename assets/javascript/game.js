@@ -30,6 +30,10 @@ $(document).on("keydown", function(event) {
             // out: increment losses
         }
 
-        // update html
+        //search:
+        //jquery update HTML
+        //jquery change html text
+
+        // add an update to html to reflect numbers
     }
 });
