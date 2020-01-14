@@ -22,6 +22,10 @@ $(document).on("keydown", function(event) {
         } else {
             userGuesses.push(event.key);
             // record guess
+            if(allowedGuesses - userGuesses.length === 0) {
+                alert("You lost!");
+                losses += 1;
+            }
             // check remaining guesses
             // out: increment losses
         }
