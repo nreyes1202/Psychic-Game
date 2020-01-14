@@ -7,8 +7,25 @@
 // Outcome: user will win or lose and game will restart
 
 var alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
-var compChoice = alphabet[Math.floor(Math.random()*myArray.length)];
+var compChoice = alphabet[Math.floor(Math.random()*alphabet.length)];
 var userGuesses = [];
 var wins = 0;
 var losses = 0;
 var allowedGuesses = 7;
+
+$(document).on("keydown", function(event) {
+    if(alphabet.includes(event.key)) {
+        if(event.key === compChoice) {
+            wins += 1;
+            alert("You won!");
+            // correct: wins+1, congrats
+        } else {
+            userGuesses.push(event.key);
+            // record guess
+            // check remaining guesses
+            // out: increment losses
+        }
+
+        // update html
+    }
+});
