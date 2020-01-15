@@ -20,29 +20,21 @@ $(document).on("keydown", function(event) {
             wins += 1;
             userGuesses = [];
             alert("You won!");
-            // correct: wins+1, congrats
+
         } else {
             userGuesses.push(event.key);
-            // record guess
             if(allowedGuesses - userGuesses.length === 0) {
                 alert("You lost!");
                 losses += 1;
             } 
 
         }
-            
-            // check remaining guesses
-            // outcome: increment losses
         $("#userGuesses").text(userGuesses);
+
+        $("#wins").text(wins);
+        
+        $("#losses").text(losses);
     }
-        
-
-        
-
-
-        //jquery update HTML
-        //jquery change html text
-
-        // add an update to html to reflect numbers
+    
     
 });
