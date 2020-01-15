@@ -5,7 +5,6 @@
 //      command: computer will keep track of guesses left
 //      command: restart game on wins/losses without refreshing page
 // Outcome: user will win or lose and game will restart
-
 var alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
 var wins = 0;
 var losses = 0;
@@ -18,26 +17,32 @@ console.log(compChoice);
 $(document).on("keydown", function(event) {
     if(alphabet.includes(event.key)) {
         if(event.key === compChoice) {
-            wins ++ 1;
+            wins += 1;
             userGuesses = [];
             alert("You won!");
             // correct: wins+1, congrats
-        } else {userGuesses.push(event.key);
+        } else {
+            userGuesses.push(event.key);
             // record guess
             if(allowedGuesses - userGuesses.length === 0) {
                 alert("You lost!");
-                losses ++ 1;
-            } else {allowedGuesses
+                losses += 1;
+            } 
 
-            }
+        }
+            
             // check remaining guesses
             // outcome: increment losses
-        }
+        $("#userGuesses").text(userGuesses);
+    }
+        
 
-        //search:
+        
+
+
         //jquery update HTML
         //jquery change html text
 
         // add an update to html to reflect numbers
-    }
+    
 });
